@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Library</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="library">
+  <div class="form">
+    <div class="input-group">
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title">
+    </div>
+    <div class="input-group">
+      <label for="author">author</label>
+      <input type="text" name="author" id="author">
+    </div>
+    <div class="input-group">
+      <label for="pages">pages</label>
+      <input type="number" name="pages" id="pages">
+    </div>
+    <div class="input-group">
+      <label for="isRead">Read yet?</label>
+      <input type="checkbox" name="isRead" id="isRead" >
+    </div>
+    <button onclick="addBookToLibrary()">Add</button>
+  </div>
+  <h1>Library Books:</h1>
+  <div id="books">
+    <div>
+      <h1>The title goes here</h1>
+      <p>by nasser abachi</p>
+      <p>pages: 259</p>
+      <p> not read yet</p>
+    </div>
+  </div>
+</div>
+
+</body>
+
+<script src="./app.js"></script>
+</html>
