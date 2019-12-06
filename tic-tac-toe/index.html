@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Tic Tac Toe</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="w-full border">
+      <div class="w-1/2 mx-auto">
+        <div>
+          <h1 class="whos-playing">Player One</h1>
+        </div>
+        <div class="w-full flex flex-col">
+          <div class="flex">
+            <div class="w-16 h-16 flex justify-center items-center marker-place cursor-pointer border border-red-500 text-center" data-index='0'></div>
+            <div class="w-16 h-16 flex justify-center items-center marker-place cursor-pointer border border-red-500 text-center" data-index='1'></div>
+            <div class="w-16 h-16 flex justify-center items-center marker-place cursor-pointer border border-red-500 text-center" data-index='2'></div>
+          </div>
+          <div class="flex">
+            <div class="w-16 h-16 flex justify-center items-center marker-place cursor-pointer border border-red-500 text-center" data-index='3'></div>
+            <div class="w-16 h-16 flex justify-center items-center marker-place cursor-pointer border border-red-500 text-center" data-index='4'></div>
+            <div class="w-16 h-16 flex justify-center items-center marker-place cursor-pointer border border-red-500 text-center" data-index='5'></div>
+          </div>
+          <div class="flex">
+            <div class="w-16 h-16 flex justify-center items-center marker-place cursor-pointer border border-red-500 text-center" data-index='6'></div>
+            <div class="w-16 h-16 flex justify-center items-center marker-place cursor-pointer border border-red-500 text-center" data-index='7'></div>
+            <div class="w-16 h-16 flex justify-center items-center marker-place cursor-pointer border border-red-500 text-center" data-index='8'></div>
+          </div>
+        </div>
+        <button id='start' class="text-white bg-green-500 px-4 py-2 rounded my-4">Start</button>
+      </div>
+    </div> 
+    <script src='app.js'></script>
+    </body>
+</html>
