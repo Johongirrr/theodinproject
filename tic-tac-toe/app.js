@@ -38,11 +38,6 @@ const Player = function(name, marker){
   return { addMarker, name, marker }; 
 }
 
-let playerOne = new Player('Player One', 'x');
-let playerTwo = new Player('Player Two', 'o');
-
-let currentPlayer = playerOne;
-
 const isGameOver = (gameBoard) => {
   const board = gameBoard.getBoard();
 
@@ -101,17 +96,27 @@ const isWinnerDiagonal = (gameBoard) => {
 let markerPlaces = document.querySelectorAll('.marker-place');
 let whosPlaying = document.querySelector('.whos-playing');
 let startBtn = document.querySelector('#start');
-let gameOver = false;
+let playerOneName = document.querySelector('#player-one-name');
+let playerTwoName = document.querySelector('#player-two-name');
+let gameElem = document.querySelector('#game');
+
+let playerOne;
+let playerTwo;
+let currentPlayer;
 
 const reset = () => {
   gameBoard.initBoard(); 
   currentPlayer = playerOne;
-  whosPlaying.innerHTML = currentPlayer.name;
-  // render();
+  if(currentPlayer) whosPlaying.innerHTML = currentPlayer.name;
 };
 
 startBtn.addEventListener('click', function(){
+  gameElem.classList.remove('hidden');
   reset();
+  playerOne = new Player(playerOneName.value, 'x');
+  playerTwo  = new Player(playerTwoName.value, 'o');
+  currentPlayer = playerOne;
+
   render();
 });
 

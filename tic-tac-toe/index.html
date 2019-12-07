@@ -11,9 +11,9 @@
     <div class="w-full border">
       <div class="w-1/2 mx-auto">
         <div>
-          <h1 class="whos-playing">Player One</h1>
+          <h1 class="whos-playing">click on the 'start' button to start playing </h1>
         </div>
-        <div class="w-full flex flex-col">
+        <div id='game' class="w-full hidden flex flex-col">
           <div class="flex">
             <div class="w-16 h-16 flex justify-center items-center marker-place cursor-pointer border border-red-500 text-center" data-index='0'></div>
             <div class="w-16 h-16 flex justify-center items-center marker-place cursor-pointer border border-red-500 text-center" data-index='1'></div>
@@ -31,6 +31,16 @@
           </div>
         </div>
         <button id='start' class="text-white bg-green-500 px-4 py-2 rounded my-4">Start</button>
+        <div>
+          <div>
+            <label for="player-one-name">Player One Name:</label>
+            <input class="border rounded p-1 my-2" type="text" name="player-one-name" id="player-one-name">
+          </div>
+          <div>
+            <label for="player-two-name">Player Two Name:</label>
+            <input class="border rounded p-1 my-2" type="text" name="player-two-name" id="player-two-name">
+          </div>
+        </div>
       </div>
     </div> 
     <script src='app.js'></script>
