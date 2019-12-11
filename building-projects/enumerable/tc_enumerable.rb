@@ -28,4 +28,14 @@ class TestEnumerable < Test::Unit::TestCase
     assert_equal(false, my_all?([1, 2, 3, 4]){|n| n % 2 == 0 })
     assert_equal(true, my_all?([2, 4, 6]){|n| n % 2 == 0 })
   end
+
+  def test_my_none_values_are_even
+    assert_equal(false, my_none?([1, 2, 3, 4]){|n| n % 2 == 0 })
+    assert_equal(true, my_none?([1, 3, 7]){|n| n % 2 == 0 })
+  end
+
+  def test_my_inject
+    assert_equal(10, my_inject?([1, 2, 3, 4], 0){|total, n| n + total  })
+  end
+
 end

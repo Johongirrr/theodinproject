@@ -52,4 +52,20 @@ module Enumerable
     end
     return true
   end
+
+  def my_none?(arr)
+    my_each(arr) do |x|
+      if yield(x)
+        return false
+      end
+    end
+    return true
+  end
+
+  def my_inject?(arr, total)
+    my_each(arr) do |x|
+      total = yield(total, x)
+    end
+    total
+  end
 end
