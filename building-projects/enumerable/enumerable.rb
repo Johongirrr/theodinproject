@@ -27,4 +27,12 @@ module Enumerable
     result
   end
 
+  def my_map(arr)
+    result = []
+    my_each(arr) do |x|
+      result.push(yield(x))
+    end
+    result
+  end
+
 end
