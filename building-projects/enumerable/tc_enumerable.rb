@@ -12,4 +12,7 @@ class TestEnumerable < Test::Unit::TestCase
     assert_equal([2, 5, 8], my_each_with_index([1, 2, 3]){|n, i| n*2+i})
   end
 
+  def test_my_select
+    assert_equal([2, 4, 6, 8], my_select([1, 2, 3, 4, 5, 6, 7, 8, 9]){|n| n % 2 == 0 })
+  end
 end
