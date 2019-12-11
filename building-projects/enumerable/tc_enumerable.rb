@@ -19,4 +19,13 @@ class TestEnumerable < Test::Unit::TestCase
   def test_my_map
     assert_equal([2, 3, 4, 5], my_map([1, 2, 3, 4]){|n| n + 1 })
   end
+
+  def test_my_any_for_any_value_is_even
+    assert_equal(true, my_any?([1, 2, 3, 4]){|n| n % 2 == 0 })
+  end
+
+  def test_my_all_values_are_even
+    assert_equal(false, my_all?([1, 2, 3, 4]){|n| n % 2 == 0 })
+    assert_equal(true, my_all?([2, 4, 6]){|n| n % 2 == 0 })
+  end
 end

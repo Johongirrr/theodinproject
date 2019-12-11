@@ -35,4 +35,21 @@ module Enumerable
     result
   end
 
+  def my_any?(arr)
+    my_each(arr) do |x|
+      if yield(x)
+        return true
+      end
+    end
+    return false
+  end
+
+  def my_all?(arr)
+    my_each(arr) do |x|
+      if !yield(x)
+        return false
+      end
+    end
+    return true
+  end
 end
