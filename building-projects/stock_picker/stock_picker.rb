@@ -1,8 +1,6 @@
 
 
 def stock_picker(days)
-  small_index = 0
-  big_index = 0
   diff = 0
   count = days.length - 1
   result = []
