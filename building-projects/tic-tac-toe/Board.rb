@@ -10,7 +10,7 @@ class Board
 
   public 
   def add(index, mark)
-    if self.is_empty?(index)
+    if self.is_empty?(index) && is_valid(index)
       @marks[index] = mark
       return true
     end
@@ -42,6 +42,10 @@ class Board
 
   def is_empty?(index)
     return @marks[index] == nil
+  end
+
+  def is_valid(index)
+    return index > -1 && index < 9
   end
 
   # return the player mark if there is a winner else return false

@@ -48,6 +48,12 @@ class TestBoard < Test::Unit::TestCase
     assert_equal(false, board.add(0, 'O'))
   end
 
+  def test_it_should_return_false_for_invalid_index
+    board = Board.new
+    assert_equal(false, board.add(99999, 'O'))
+    assert_equal(false, board.add(-5, 'O'))
+  end
+
   def test_it_should_return_whatever_the_board_is_empty
     board = Board.new
     assert_equal(true, board.is_empty?(0))
