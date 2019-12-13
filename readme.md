@@ -13,6 +13,9 @@ This repository contains my solutions.
 * Each project must have the minimal tests to make sure it is working and I can refactor the code with a confidant.
 
 ### Projects:
++ [Mastermind](https://github.com/abachi/theodinproject/tree/master/building-projects/mastermind)
+Build a [Mastermind](http://en.wikipedia.org/wiki/Mastermind_(board_game)) game from the command line where you have 12 turns to guess the secret code, starting with you guessing the computer’s random code.
+
 + [Tic Tac Toe](https://github.com/abachi/theodinproject/tree/master/building-projects/tic-tac-toe)
 Build a [tic-tac-toe](http://en.wikipedia.org/wiki/Tic-tac-toe) game on the command line where two human players can play against each other and the board is displayed in between turns.
 
