@@ -11,7 +11,7 @@ class TestGame < Test::Unit::TestCase
     p2 = Player.new('Sabah', 'X')
     assert_equal(false, game.gameOver?(board, p1, p2))
 
-    board.markers = {
+    board.marks = {
       0 => 'X', 1 => 'O', 2 => 'O',
       3 => 'O', 4 => 'X', 5 => 'X',
       6 => 'X', 7 => 'O', 8 => 'O'

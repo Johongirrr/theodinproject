@@ -1,7 +1,7 @@
 class Board
-  attr_accessor :markers
+  attr_accessor :marks
   def initialize
-    @markers = {
+    @marks = {
       0 => nil, 1 => nil, 2 => nil,
       3 => nil, 4 => nil, 5 => nil,
       6 => nil, 7 => nil, 8 => nil
@@ -11,7 +11,7 @@ class Board
   public 
   def add(index, marker)
     if self.is_empty?(index)
-      @markers[index] = marker
+      @marks[index] = marker
       return true
     end
     return false
@@ -19,17 +19,17 @@ class Board
  
   def display
     puts '-------------------Display-------------------------'
-    0.upto(2){|index| print "| #{@markers[index] || index} |"}
+    0.upto(2){|index| print "| #{@marks[index] || index} |"}
     puts ''
-    3.upto(5){|index| print "| #{@markers[index] || index} |"}
+    3.upto(5){|index| print "| #{@marks[index] || index} |"}
     puts ''
-    6.upto(8){|index| print "| #{@markers[index] || index} |"}
+    6.upto(8){|index| print "| #{@marks[index] || index} |"}
     puts ''
     puts '-------------------Display-------------------------'
   end
 
   def is_over?
-    @markers.all?{|index, marker| marker != nil}
+    @marks.all?{|index, marker| marker != nil}
   end
 
   def end_with_draw?
@@ -39,23 +39,23 @@ class Board
   end
 
   def is_empty?(index)
-    return @markers[index] == nil
+    return @marks[index] == nil
   end
 
   # return the player mark if there is a winner else return false
   def is_there_a_winner?
     # rows 
-    return @markers[0] if @markers[0] == @markers[1] && @markers[1] == @markers[2]
-    return @markers[3] if @markers[3] == @markers[4] && @markers[4] == @markers[5]
-    return @markers[6] if @markers[6] == @markers[7] && @markers[7] == @markers[8]
+    return @marks[0] if @marks[0] == @marks[1] && @marks[1] == @marks[2]
+    return @marks[3] if @marks[3] == @marks[4] && @marks[4] == @marks[5]
+    return @marks[6] if @marks[6] == @marks[7] && @marks[7] == @marks[8]
     #cols
-    return @markers[0] if @markers[0] == @markers[3] && @markers[3] == @markers[6]
-    return @markers[1] if @markers[1] == @markers[4] && @markers[4] == @markers[7]
-    return @markers[2] if @markers[2] == @markers[5] && @markers[5] == @markers[8]
+    return @marks[0] if @marks[0] == @marks[3] && @marks[3] == @marks[6]
+    return @marks[1] if @marks[1] == @marks[4] && @marks[4] == @marks[7]
+    return @marks[2] if @marks[2] == @marks[5] && @marks[5] == @marks[8]
 
     #diagonals
-    return @markers[0] if @markers[0] == @markers[4] && @markers[4] == @markers[8]
-    return @markers[2] if @markers[2] == @markers[4] && @markers[4] == @markers[6]
+    return @marks[0] if @marks[0] == @marks[4] && @marks[4] == @marks[8]
+    return @marks[2] if @marks[2] == @marks[4] && @marks[4] == @marks[6]
 
     return false
   end
