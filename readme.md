@@ -21,7 +21,7 @@ Implement a [caesar cipher](https://www.youtube.com/watch?v=36xNpbosfTY) that ta
 
 + [Stock Picker](https://github.com/abachi/theodinproject/tree/master/building-projects/stock_picker)
 Implement a method #stock_picker that takes in an array of stock prices, one for each hypothetical day. It should return a pair of days representing the best day to buy and the best day to sell. Days start at 0.
-Example:
+For Example:
     <blockquote>
       <p>stock_picker([17,3,6,9,15,8,6,1,10])</p>
       <p>=> [1,4]  # for a profit of $15 - $3 == $12</p>
@@ -29,7 +29,7 @@ Example:
  
  + [Substrings](https://github.com/abachi/theodinproject/tree/master/building-projects/substrings)
  Implement a method #substrings that takes a word as the first argument and then an array of valid substrings (your dictionary) as the second argument. It should return a hash listing each substring (case insensitive) that was found in the original string and how many times it was found.
- Example:
+ For Example:
     <blockquote>
       <p> > dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"] </p>
       <p> => ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]</p>
@@ -39,7 +39,7 @@ Example:
  
  + [bubble_sort](https://github.com/abachi/theodinproject/tree/master/building-projects/bubble_sort)
  Build a method #bubble_sort that takes an array and returns a sorted array. It must use the bubble sort methodology.
- Example:
+ For Example:
     <blockquote>
       <p> > bubble_sort([4,3,78,2,0,2]) </p>
       <p> => [0,2,2,3,4,78] </p>
