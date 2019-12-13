@@ -1,17 +1,16 @@
-## My efforts while learning and practicing the odin project:
-
-[The Odin project](https://www.theodinproject.com/) is a great way to learn web development, It limits the choices for you and provides a well choosen resources to start your journey as a web developer without getting lost.
+### Introduction
+[The Odin project](https://www.theodinproject.com/) is a great way to learn web development, It limits the choices for you and provides well-chosen resources to start your journey as a web developer without getting lost.
 
 ### How it works?
 
-1. You start reading and watching all the required content and make sure you understand the topics by yourself.
-2. Test yourself by sovling the quizzes provided at the end of each lesson and answering the outcome questions.
-3. Do the assignments, putting all what you learned and build projects.
+1. Read and watch all the required contents and make sure you understand the topics on your own.
+2. Test yourself by solving the quizzes provided at the end of each lesson and answering the outcome questions.
+3. Do the assignments by putting all what you have learned to build mini projects.
 
-I decided to take this challenge and this reposetory contains my assignments solutions.
+This repository contains my solutions.
 ### Rules Must Follow: 
-* Each project should not be one-try solution, Each time I learn something new e.g: design patterns, coding styles and best practices I should apply them to the previous projects.
-* Each project must have the minimal tests to make sure its working and to make is easy for me to refactor with a confident.
+* Each project should not be a one-try solution, Each time I learn something new e.g: design patterns, coding styles and best practices I have to apply them on the previous projects.
+* Each project must have the minimal tests to make sure it is working and I can refactor the code with a confidant.
 
 ### Projects:
 + [Tic Tac Toe](https://github.com/abachi/theodinproject/tree/master/building-projects/tic-tac-toe)
