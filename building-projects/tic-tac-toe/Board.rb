@@ -44,20 +44,21 @@ class Board
 
   # return the player mark if there is a winner else return false
   def is_there_a_winner?
-    # rows 
-    return @marks[0] if @marks[0] == @marks[1] && @marks[1] == @marks[2]
-    return @marks[3] if @marks[3] == @marks[4] && @marks[4] == @marks[5]
-    return @marks[6] if @marks[6] == @marks[7] && @marks[7] == @marks[8]
-    #cols
-    return @marks[0] if @marks[0] == @marks[3] && @marks[3] == @marks[6]
-    return @marks[1] if @marks[1] == @marks[4] && @marks[4] == @marks[7]
-    return @marks[2] if @marks[2] == @marks[5] && @marks[5] == @marks[8]
-
-    #diagonals
-    return @marks[0] if @marks[0] == @marks[4] && @marks[4] == @marks[8]
-    return @marks[2] if @marks[2] == @marks[4] && @marks[4] == @marks[6]
-
+    keys = [
+      [0, 1, 2], [3, 4, 5], [6, 7, 8], #rows
+      [0, 3, 6], [1, 4, 7],[2, 5, 8], #columns
+      [0, 4, 8],[2, 4, 6] #diagonals
+    ]
+    i = 0
+    loop do
+      break if i > 7 
+      return @marks[keys[i][0]] if self.check(keys[i], @marks)
+      i += 1
+    end
     return false
   end
 
+  def check(keys, marks)
+    return marks[keys[0]] if marks[keys[0]] == marks[keys[1]] && marks[keys[1]] == marks[keys[2]]
+  end
 end
