@@ -9,9 +9,9 @@ class Board
   end
 
   public 
-  def add(index, marker)
+  def add(index, mark)
     if self.is_empty?(index)
-      @marks[index] = marker
+      @marks[index] = mark
       return true
     end
     return false
@@ -29,7 +29,7 @@ class Board
   end
 
   def is_over?
-    @marks.all?{|index, marker| marker != nil}
+    @marks.all?{|index, mark| mark != nil}
   end
 
   def end_with_draw?
