@@ -18,14 +18,16 @@ class Board
   end
  
   def display
-    puts '-------------------Display-------------------------'
-    0.upto(2){|index| print "| #{@marks[index] || index} |"}
+    width = 10
+    puts '------------------- Board -------------------------'
+    0.upto(2){|index| print "| #{@marks[index] || index} |".center(width)}
     puts ''
-    3.upto(5){|index| print "| #{@marks[index] || index} |"}
+    3.upto(5){|index| print "| #{@marks[index] || index} |".center(width)}
     puts ''
-    6.upto(8){|index| print "| #{@marks[index] || index} |"}
+    6.upto(8){|index| print "| #{@marks[index] || index} |".center(width)}
     puts ''
-    puts '-------------------Display-------------------------'
+    puts '---------------------------------------------------'
+    puts ''
   end
 
   def is_over?

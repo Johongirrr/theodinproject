@@ -3,12 +3,18 @@ require_relative 'Board'
 require_relative 'Player'
 
 
-puts 'Welcome the the Tic-Tac-Toe Game'
-print 'Please enter the first player name: '
+puts 'Welcome To The Tic-Tac-Toe Rubist Game'
+puts ''
+puts 'Please fill the following information.'
+puts ''
+print "What is the first player's name: "
 player_1_name = gets.chomp 
 
-print 'Please enter the second player name: '
+print "What is the second player's name: "
 player_2_name = gets.chomp 
+puts ''
+puts '*** Starting The Game ***'
+puts ''
 
 game = Game.new
 
