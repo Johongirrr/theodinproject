@@ -90,7 +90,7 @@ class Game
         save(data)
       end
       if counter >= rounds
-        puts "Sorry, the game is over."
+        puts "Sorry, the game is over, the secret word is : #{secret}"
         break
       end
       counter += 1
