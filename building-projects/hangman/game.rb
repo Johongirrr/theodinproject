@@ -7,8 +7,8 @@ class Game
   def initialize(file_path)
     @status = ''
     @words =  File.readlines(file_path)
-    @words = @words.select{|word| word.length <= MAX && word.length >= MIN}
     @words = clean_words(@words)
+    @words = @words.select{|word| word.length <= MAX && word.length >= MIN}
   end
   
   def save_names
@@ -38,7 +38,7 @@ class Game
   end
 
   def clean_words(words)
-    words.each { |word| word.gsub!(/\r\n/, '') }
+    words.map { |word| word.gsub(/\r\n/, '') }
   end
 
   def run
@@ -47,7 +47,6 @@ class Game
     secret = self.secret_word
     rounds = secret.length + 3
     puts "Hint: this word is #{secret.length} length."
-    puts "Hint: this word is #{secret}."
     while true
       puts "Round #{counter}/#{rounds}"
       @status = hint(secret, answer)
