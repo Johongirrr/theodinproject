@@ -13,6 +13,8 @@ This repository contains my solutions.
 * Each project must have the minimal tests to make sure it is working and I can refactor the code with a confidant.
 
 ### Projects:
++ [Hangman](https://github.com/abachi/theodinproject/tree/master/building-projects/hangman)
+A simple command line Hangman game where one player plays against the computer and he/she can save the game state and reload it anytime.
 + [Mastermind](https://github.com/abachi/theodinproject/tree/master/building-projects/mastermind)
 Build a [Mastermind](http://en.wikipedia.org/wiki/Mastermind_(board_game)) game from the command line where you have 12 turns to guess the secret code, starting with you guessing the computer’s random code.
 
