@@ -148,4 +148,14 @@ class Tree
     end
   end
 
+  def depth(value)
+    counter = 0
+    pn = @root
+    while pn != nil
+      return counter if value == pn.data
+      value < pn.data ? pn = pn.left : pn = pn.right
+      counter += 1
+    end
+    return -1
+  end
 end

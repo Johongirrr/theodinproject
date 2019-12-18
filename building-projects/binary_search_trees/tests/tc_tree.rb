@@ -67,6 +67,14 @@ class TestTree < Test::Unit::TestCase
     result = tree.postorder{|node| node.data + 1}
     assert_equal([2, 4, 8, 6, 5, 10, 9, 325, 6346, 68, 24], result)
   end
+  
+  def test_should_return_the_correct_depth_level_of_the_given_node_else_return_minus_one
+    tree = Tree.new([23, 8, 4, 3, 1, 5, 7, 9, 67, 6345, 324])
+    assert_equal(0, tree.depth(23))
+    assert_equal(2, tree.depth(4))
+    assert_equal(4, tree.depth(7))
+    assert_equal(-1, tree.depth(999))
+  end
 end
 
 
