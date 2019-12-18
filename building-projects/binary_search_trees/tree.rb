@@ -172,7 +172,6 @@ class Tree
       pn = pn.right
       right_counter += 1
     end
-    print "=>>>>>>>> #{(left_counter - right_counter).abs}"
     return (left_counter - right_counter).abs < 2
   end
 end
