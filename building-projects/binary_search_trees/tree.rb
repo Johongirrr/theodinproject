@@ -115,25 +115,37 @@ class Tree
     end
     root
   end
-  def preorder(root = @root, results = [])
+  def preorder(root = @root, results = [], &block)
     return results if root.nil?
-    results.push(root.data)
-    preorder(root.left, results)
-    preorder(root.right, results)
+    if block_given?
+      results.push(yield(root))
+    else    
+      results.push(root.data)
+    end
+    preorder(root.left, results, &block)
+    preorder(root.right, results, &block)
   end
 
-  def inorder(root = @root, results = [])
+  def inorder(root = @root, results = [], &block)
     return results if root.nil?
-    inorder(root.left, results)
-    results.push(root.data)
-    inorder(root.right, results)
+    inorder(root.left, results, &block)
+    if block_given?
+      results.push(yield(root))
+    else    
+      results.push(root.data)
+    end
+    inorder(root.right, results, &block)
   end
 
-  def postorder(root = @root, results = [])
+  def postorder(root = @root, results = [], &block)
     return results if root.nil?
-    postorder(root.left, results)
-    postorder(root.right, results)
-    results.push(root.data)
+    postorder(root.left, results, &block)
+    postorder(root.right, results, &block)
+    if block_given?
+      results.push(yield(root))
+    else    
+      results.push(root.data)
+    end
   end
 
 end

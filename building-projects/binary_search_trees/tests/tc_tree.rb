@@ -50,16 +50,22 @@ class TestTree < Test::Unit::TestCase
   def test_preorder_method_should_return_data_in_depth_first_order
     tree = Tree.new([23, 8, 4, 3, 1, 5, 7, 9, 67, 6345, 324])
     assert_equal([23, 8, 4, 3, 1, 5, 7, 9, 67, 6345, 324], tree.preorder)
+    result = tree.preorder{|node| node.data + 1}
+    assert_equal([24, 9, 5, 4, 2, 6, 8, 10, 68, 6346, 325], result)
   end
 
   def test_inorder_method_should_return_data_in_depth_first_order
     tree = Tree.new([23, 8, 4, 3, 1, 5, 7, 9, 67, 6345, 324])
     assert_equal([1, 3, 4, 5, 7, 8, 9, 23, 67, 324, 6345], tree.inorder)
+    result = tree.inorder{|node| node.data + 1}
+    assert_equal([2, 4, 5, 6, 8, 9, 10, 24, 68, 325, 6346], result)
   end
 
   def test_postorder_method_should_return_data_in_depth_first_order
     tree = Tree.new([23, 8, 4, 3, 1, 5, 7, 9, 67, 6345, 324])
     assert_equal([1, 3, 7, 5, 4, 9, 8, 324, 6345, 67, 23], tree.postorder)
+    result = tree.postorder{|node| node.data + 1}
+    assert_equal([2, 4, 8, 6, 5, 10, 9, 325, 6346, 68, 24], result)
   end
 end
 
