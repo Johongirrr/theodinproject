@@ -115,4 +115,25 @@ class Tree
     end
     root
   end
+  def preorder(root = @root, results = [])
+    return results if root.nil?
+    results.push(root.data)
+    preorder(root.left, results)
+    preorder(root.right, results)
+  end
+
+  def inorder(root = @root, results = [])
+    return results if root.nil?
+    inorder(root.left, results)
+    results.push(root.data)
+    inorder(root.right, results)
+  end
+
+  def postorder(root = @root, results = [])
+    return results if root.nil?
+    postorder(root.left, results)
+    postorder(root.right, results)
+    results.push(root.data)
+  end
+
 end

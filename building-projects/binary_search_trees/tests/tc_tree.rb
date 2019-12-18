@@ -29,13 +29,6 @@ class TestTree < Test::Unit::TestCase
     assert_equal(nil, tree.find(999))
   end
 
-  def test_should_return_data_by_level_order
-    tree = Tree.new([23, 8, 4, 3, 1, 5, 7, 9, 67, 6345, 324])
-    assert_equal([23, 8, 67, 4, 9, 6345, 3, 5, 324, 1, 7], tree.level_order)
-    result = tree.level_order{|node| node.data + 1}
-    assert_equal([24, 9, 68, 5, 10, 6346, 4, 6, 325, 2, 8], result)
-  end
-
   def test_build_tree_should_return_a_binary_tree
     root = Tree.build_tree([23, 8, 4, 3, 1, 5, 7, 9, 67, 6345, 324])
     assert_not_nil(root.left)
@@ -47,5 +40,27 @@ class TestTree < Test::Unit::TestCase
     assert_equal(324, root.right.right.left.data)
   end
 
+  def test_should_return_data_by_level_order
+    tree = Tree.new([23, 8, 4, 3, 1, 5, 7, 9, 67, 6345, 324])
+    assert_equal([23, 8, 67, 4, 9, 6345, 3, 5, 324, 1, 7], tree.level_order)
+    result = tree.level_order{|node| node.data + 1}
+    assert_equal([24, 9, 68, 5, 10, 6346, 4, 6, 325, 2, 8], result)
+  end
+  
+  def test_preorder_method_should_return_data_in_depth_first_order
+    tree = Tree.new([23, 8, 4, 3, 1, 5, 7, 9, 67, 6345, 324])
+    assert_equal([23, 8, 4, 3, 1, 5, 7, 9, 67, 6345, 324], tree.preorder)
+  end
+
+  def test_inorder_method_should_return_data_in_depth_first_order
+    tree = Tree.new([23, 8, 4, 3, 1, 5, 7, 9, 67, 6345, 324])
+    assert_equal([1, 3, 4, 5, 7, 8, 9, 23, 67, 324, 6345], tree.inorder)
+  end
+
+  def test_postorder_method_should_return_data_in_depth_first_order
+    tree = Tree.new([23, 8, 4, 3, 1, 5, 7, 9, 67, 6345, 324])
+    assert_equal([1, 3, 7, 5, 4, 9, 8, 324, 6345, 67, 23], tree.postorder)
+  end
 end
+
 
