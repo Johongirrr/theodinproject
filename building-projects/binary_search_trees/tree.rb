@@ -158,4 +158,21 @@ class Tree
     end
     return -1
   end
+
+  def balanced?
+    left_counter = 0
+    right_counter = 0
+    pn = @root
+    while pn != nil
+      pn = pn.left
+      left_counter += 1
+    end
+    pn = @root
+    while pn != nil
+      pn = pn.right
+      right_counter += 1
+    end
+    print "=>>>>>>>> #{(left_counter - right_counter).abs}"
+    return (left_counter - right_counter).abs < 2
+  end
 end

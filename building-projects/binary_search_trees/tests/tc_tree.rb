@@ -75,6 +75,17 @@ class TestTree < Test::Unit::TestCase
     assert_equal(4, tree.depth(7))
     assert_equal(-1, tree.depth(999))
   end
+
+  def test_should_return_if_the_tree_is_balanced
+    balanced_tree = Tree.new([23, 8, 67])
+    assert_equal(true, balanced_tree.balanced?)
+    balanced_tree = Tree.new([23, 8, 67, 68])
+    assert_equal(true, balanced_tree.balanced?)
+    balanced_tree = Tree.new([23, 8, 67, 5])
+    assert_equal(true, balanced_tree.balanced?)
+    not_balanced_tree = Tree.new([23, 8, 67, 5, 10, 1])
+    assert_equal(false, not_balanced_tree.balanced?)
+  end
 end
 
 
