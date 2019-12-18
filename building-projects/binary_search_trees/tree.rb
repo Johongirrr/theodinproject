@@ -174,4 +174,16 @@ class Tree
     end
     return (left_counter - right_counter).abs < 2
   end
+
+  def rebalance!
+    values = self.inorder
+    middle = (values.length-1)/2
+    left_values = [0..middle-1]
+    right_values = [middle+1..]
+    left = Tree.build_tree(left_values)
+    right = Tree.build_tree(right_values)
+    @root = Node.new(values[middle])
+    @root.left = left
+    @root.right = right
+  end
 end

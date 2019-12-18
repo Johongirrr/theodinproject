@@ -86,6 +86,13 @@ class TestTree < Test::Unit::TestCase
     not_balanced_tree = Tree.new([23, 8, 67, 5, 10, 1])
     assert_equal(false, not_balanced_tree.balanced?)
   end
+
+  def test_should_rebalance_unbalanced_tree
+    tree = Tree.new([23, 8, 67, 5, 10, 1])
+    assert_equal(false, tree.balanced?)
+    tree.rebalance!
+    assert_equal(true, tree.balanced?)
+  end
 end
 
 
