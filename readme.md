@@ -13,6 +13,17 @@ This repository contains my solutions.
 * Each project must have the minimal tests to make sure it is working and I can refactor the code with a confidant.
 
 ### Projects:
++ [Binary Search Trees](https://github.com/abachi/theodinproject/tree/master/building-projects/binary_search_trees)
+A simple binary search tree implemention where the tree has the following methods:
+  - #build_tree which takes an array of data (e.g. [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]) and turns it into a balanced binary tree
+  - #insert and #delete method which accepts a value to insert/delete
+  - #find method which accepts a value and returns the node with the given value
+  - #level_order method which accepts a block. The method traverse the tree in breadth-first level order and yield each node to the provided block
+  - #inorder, #preorder, and #postorder methods which accept a block. Each method should traverse the tree in their respective depth-first order and yield each node to the provided block
+  - #depth method which accepts a node and returns the depth(number of levels) beneath the node
+  - #balanced? method which checks if the tree is balanced
+  - #rebalance! method which rebalances an unbalanced tree
+  Finally a simple [driver script](https://github.com/abachi/theodinproject/blob/master/building-projects/binary_search_trees/driver.rb) as an example to test these methods.
 + [Linked Lists](https://github.com/abachi/theodinproject/tree/master/building-projects/linked-list)
   - #append adds a new node to the end of the list
   - #prepend adds a new node to the start of the list
