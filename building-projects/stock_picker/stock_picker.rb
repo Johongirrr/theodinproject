@@ -1,5 +1,3 @@
-
-
 def stock_picker(days)
   diff = 0
   count = days.length - 1
