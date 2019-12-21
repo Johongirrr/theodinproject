@@ -13,6 +13,18 @@ This repository contains my solutions.
 * Each project must have the minimal tests to make sure it is working and I can refactor the code with a confidant.
 
 ### Projects:
++ [Knight's Travails](https://github.com/abachi/theodinproject/tree/master/building-projects/knights_travails)
+ build a function knight_moves that shows the simplest possible way to get from one square to another by outputting all squares the knight will stop on along the way.
+ For example:
+     <blockquote>
+      <p>> knight_moves([3,3],[4,3])</p>
+      <p>  => You made it in 3 moves!  Heres your path:
+            [3,3]
+            [4,5]
+            [2,4]
+            [4,3]
+      </p>
+    </blockquote>
 + [Binary Search Trees](https://github.com/abachi/theodinproject/tree/master/building-projects/binary_search_trees)
 A simple binary search tree implemention where the tree has the following methods:
   - #build_tree which takes an array of data (e.g. [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]) and turns it into a balanced binary tree
