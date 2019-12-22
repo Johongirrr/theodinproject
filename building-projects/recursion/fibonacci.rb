@@ -1,5 +1,3 @@
-
-
 def fibs(n)
   sq = [0, 1] 
   2.upto(n) do |i|
