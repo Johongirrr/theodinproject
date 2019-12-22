@@ -1,6 +1,6 @@
-require_relative 'Game'
-require_relative 'Board'
-require_relative 'Player'
+require './lib/game.rb'
+require './lib/board.rb'
+require './lib/player.rb'
 
 
 puts 'Welcome To The Tic-Tac-Toe Rubist Game'
