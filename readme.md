@@ -13,6 +13,8 @@ This repository contains my solutions.
 * Each project must have the minimal tests to make sure it is working and I can refactor the code with a confidant.
 
 ### Projects:
++ [Connect Four](https://github.com/abachi/theodinproject/tree/master/building-projects/connect_four)
+  Build [Connect Four](http://en.wikipedia.org/wiki/Connect_Four)
 + [Knight's Travails](https://github.com/abachi/theodinproject/tree/master/building-projects/knights_travails)
  build a function knight_moves that shows the simplest possible way to get from one square to another by outputting all squares the knight will stop on along the way.
  For example:
