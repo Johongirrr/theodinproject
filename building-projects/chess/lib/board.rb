@@ -1,13 +1,21 @@
 class Board
+  attr_reader :removed
+  attr_accessor :pieces
   def initialize
-
+    @constraints = {
+      'rook' => ->(rook, king){
+        king_ref = get_ref(king)
+        rook_ref = get_ref(rook) 
+        return !obstacle?(rook, king) && (king_ref[0] == rook_ref[0] || king_ref[1] == rook_ref[1]) 
+      },
+    }
+    @removed = {'white' => [], 'black' => []}
     @refs = {'A' => 0, 'B' => 1, 'C' => 2, 'D' => 3, 'E' => 4, 'F' => 5, 'G' => 6, 'H' => 7} 
     @icons = {
       'black_king' => "♔", 'black_queen' => '♕', 'black_knight_1' => '♘', 'black_knight_2' => '♘',
       'black_bishop_1' => '♗', 'black_bishop_2' => '♗', 'black_rook_1' => '♖', 'black_rook_2' => '♖',
       'black_pawn_1' => '♙', 'black_pawn_2' => '♙', 'black_pawn_3' => '♙', 'black_pawn_4' => '♙',
       'black_pawn_5' => '♙', 'black_pawn_6' => '♙', 'black_pawn_7' => '♙', 'black_pawn_8' => '♙',
-
       'white_king' => "♚", 'white_queen' => '♛', 'white_knight_1' => '♞', 'white_knight_2' => '♞',
       'white_bishop_1' => '♝', 'white_bishop_2' => '♝', 'white_rook_1' => '♜', 'white_rook_2' => '♜',
       'white_pawn_1' => '♟', 'white_pawn_2' => '♟','white_pawn_3' => '♟','white_pawn_4' => '♟',
@@ -49,6 +57,73 @@ class Board
       puts ''
     end
     puts "      A   B   C   D   E   F   G   H"
+  end
+
+  def obstacle?(piece, target)
+    piece_ref = get_ref(piece)
+    target_ref = get_ref(target)
+    piece_row  = piece_ref[0]
+    target_row  = target_ref[0]
+    piece_col  = piece_ref[1]
+    target_col  = target_ref[1]
+    if piece.to_s.include?('rook')
+      return true if check_rook_vertically(target_row, piece_row, target_col)
+      return true if check_rook_horizontally(target_col, piece_col, target_row)
+      return false
+    end
+  end
+   
+  def check_rook_vertically(target_row, piece_row, col)
+    from = target_row > piece_row ? piece_row : target_row 
+    to = target_row < piece_row ?  piece_row : target_row
+    from += 1
+    to -= 1
+    from.upto(to) {|row| return true if @pieces[row][col] != nil }
+    return false
+  end 
+
+  def check_rook_horizontally(target_col, piece_col, row)
+    from = target_col > piece_col ? piece_col : target_col 
+    to = target_col < piece_col ?  piece_col : target_col 
+    from += 1
+    to -= 1
+    from.upto(to) {|col| return true if @pieces[row][col] != nil }
+    return false
+  end
+
+  def get_ref(piece)
+    0.upto(7) do |row|
+      0.upto(7) do |col|
+        if piece == @pieces[row][col]
+          return [row, col]
+        end
+      end 
+    end
+  end
+  
+  def remove(ref)
+    piece = self.whois(ref)
+    @removed['white'].push(piece) if piece.to_s.include?('white')
+    @removed['black'].push(piece) if piece.to_s.include?('black')
+    row = calc_row(ref[1]) 
+    col = @refs[ref[0]]
+    @pieces[row][col] = nil
+  end
+
+  def in_check?(king)
+    color =  king.to_s.include?('white') ? 'black' : 'white'
+    enemies = []
+    @pieces.each{|row| row.each{|piece| enemies.push(piece) if piece.to_s.include?(color)}}
+    enemies.each do |enemie|
+      return true if can_kill_king?(enemie, king)
+    end
+    return false
+  end
+
+  def can_kill_king?(enemie, king)
+    if enemie.to_s.include?('rook')
+      return @constraints['rook'].call(enemie, king)
+    end
   end
   
   private
